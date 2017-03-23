@@ -1,7 +1,6 @@
 package com.java.thread;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class WaitNotifyDemo {

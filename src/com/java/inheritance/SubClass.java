@@ -10,7 +10,7 @@ public class SubClass extends SuperClass {
 	
 	public SubClass(String address, String designation){
 		this();
-		super(10, "sairam");
+		//super(10, "sairam"); //only one can have as first statement
 	}
 	
 	public String getAddress() {

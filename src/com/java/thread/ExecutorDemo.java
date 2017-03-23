@@ -23,7 +23,7 @@ public class ExecutorDemo {
 //		myExecutor.execute(new Producer());
 //		myExecutor.execute(new Producer());
 		System.out.println("No:of cores:"+Runtime.getRuntime().availableProcessors());
-		Thread t1 = new Producer();
+		Thread t1 = new Producer1();
 		Thread t2 = new Deleter();
 		t1.start();
 		t2.start();
@@ -35,7 +35,7 @@ public class ExecutorDemo {
 
 }
 
-class Producer extends Thread{
+class Producer1 extends Thread{
 
 	@Override
 	public void run() {

@@ -22,7 +22,6 @@ public class NestedClasses {
 	
 	//Static nested class can not access outer class instance members
 	static class StaticNestedClass{
-		outer
 	}
 
 }

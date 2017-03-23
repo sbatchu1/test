@@ -2,7 +2,7 @@ package com.java.thread;
 
 public class CounterDemo {
 	public static void main(String[] args) throws InterruptedException{
-		MyCounter counter = new MyCounter();
+		Counter counter = new Counter();
 		Thread increment = new Thread(new Thread1(counter));
 		Thread decrement = new Thread(new Thread2(counter));
 		
@@ -15,9 +15,9 @@ public class CounterDemo {
 }
 
 class Thread1 implements Runnable{
-	MyCounter counter;
+	Counter counter;
 	
-	Thread1(MyCounter counter){
+	Thread1(Counter counter){
 		this.counter = counter;
 	}
 
@@ -29,9 +29,9 @@ class Thread1 implements Runnable{
 }
 
 class Thread2 implements Runnable{
-	MyCounter counter;
+	Counter counter;
 	
-	Thread2(MyCounter counter){
+	Thread2(Counter counter){
 		this.counter = counter;
 	}
 
