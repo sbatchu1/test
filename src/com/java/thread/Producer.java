@@ -12,18 +12,10 @@ public class Producer implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Incrementing the counter .....");
+		System.out.println("Producer Incrementing the counter .....");
 		synchronized (list) {
-			int count = 0;
-			while(true){
-				list.add(count);
-				if(count == 20)
-				{
-					list.notifyAll();
-					break;
-				}
-				count++;
-			}
+				list.add(1);
+				list.notifyAll();
 		}
 	}
 

@@ -12,23 +12,23 @@ public class Consumer implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Consumer run():");
-
-		while (list.isEmpty()) {
+			System.out.println(" Consumer Waiting for list");
 			synchronized (list) {
 				try {
-					System.out.println(" Before Wait");
-					list.wait();
-					System.out.println("After wait:");
+				
+					while(list.isEmpty()){
+						list.wait();
+					}
+					System.out.println("wait completed :");
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				list.stream().forEach((item) -> {
+					System.out.println("item: " + item);
+				});
 			}
-		}
 
-		list.stream().forEach((item) -> {
-			System.out.println("item: " + item);
-		});
+
 	}
 }
