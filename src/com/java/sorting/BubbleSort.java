@@ -28,6 +28,7 @@ public class BubbleSort {
 	public static void main(String[] args){
 		BubbleSort bs = new BubbleSort();
 		int[] arr = {65, 25, 12, 22, 11};
+		bs.printArray(arr);
 		bs.sort(arr);
 		bs.printArray(arr);
 		

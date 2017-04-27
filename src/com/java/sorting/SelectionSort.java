@@ -8,7 +8,7 @@ public class SelectionSort {
 			int min_idx = i;
 			boolean swapRequired = false;
 			for (int j = i + 1; j < n; j++) {
-				if (arr[j] < arr[i]) {
+				if (arr[j] < arr[min_idx]) {
 					System.out.println("iteration :"+j);
 					min_idx = j;
 					swapRequired = true;
@@ -35,6 +35,7 @@ public class SelectionSort {
 	public static void main(String[] args) {
 		SelectionSort ss = new SelectionSort();
 		int[] arr = {2,1,8,7,4};
+		ss.printArray(arr);
 		ss.sort(arr);
 		ss.printArray(arr);
 

@@ -71,5 +71,4 @@ public class Node {
 			
 		return newParent;
 	}
-	
 }
