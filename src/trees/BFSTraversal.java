@@ -18,9 +18,45 @@ public class BFSTraversal {
 
 		BFSTraversal bfs = new BFSTraversal();
 		bfs.levelOrderQueue(root);
+		
+//		bfs.levelOrderIterative(root);
 	}
 
-	private void levelOrderQueue(TNode root) {
+	public void levelOrderIterative(TNode root) {
+		
+		int height = findHeight(root);
+		for(int i = 1; i<=height; i++){
+			printGivenLevel(root, i);
+		}
+		
+	}
+
+	private void printGivenLevel(TNode root, int level) {
+		if(root == null)
+			return;
+		if(level == 1)
+			System.out.print(root.data+" ");
+		else if(level > 1){
+			printGivenLevel(root.left, level);
+			printGivenLevel(root.right, level);
+		}
+	}
+
+	private int findHeight(TNode root) {
+		if(root == null)
+			return 0;
+		else{
+			int lheight = findHeight(root.left);
+			int rheight = findHeight(root.right);
+			
+			if(lheight > rheight)
+				return lheight + 1;
+			else
+				return rheight + 1;
+		}
+	}
+
+	public void levelOrderQueue(TNode root) {
 
 		if (root == null)
 			return;
