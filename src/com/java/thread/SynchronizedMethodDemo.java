@@ -20,7 +20,7 @@ public class SynchronizedMethodDemo {
 	 * omitted the result will be unpredictable it may return same value for two
 	 * threads
 	 */
-	private static int getId() {
+	private synchronized static int getId() {
 		return counter++;
 	}
 
